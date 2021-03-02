@@ -6,8 +6,17 @@ $textlabellight: hsl(228, 12%, 44%);
 $textlight: hsl(230, 17%, 14%);
 $togglelight: hsl(230, 22%, 74%);
 
+// Variables de Metricts State
+$state-green: hsl(163, 72%, 41%);
+$state-red: hsl(356, 69%, 56%);
 
-//Estilos de fondo
+// Variables Social Media
+$facebook-color: hsl(208, 92%, 53%);
+$twitter-color:hsl(203, 89%, 53%);
+$instagram-color: linear-gradient(90deg, hsl(329, 70%, 58%) 25%,hsl(37, 97%, 70%) 100%);
+$youtube-color: hsl(348, 97%, 39%);
+
+//Estilos del fondo
 body{
     background: $white;
 }
@@ -17,11 +26,14 @@ body{
     margin: 0 auto;
 }
 
-//Estilos de letra
+//Estilos del Font
+
+h1, h2, h4, p, span{
+    color: $textlight;        
+}
 
 .title{
-    font-size: 25px;
-    color: $textlight;        
+    font-size: 25px;    
 }
 
 .title-primary{
@@ -35,14 +47,17 @@ body{
     margin: 5px 0 25px 0;     
 }
 
-// Estilos al Header
+// Estilos del Header
 
-.head{
-    background: $topBGpattern;
+.head{    
     display: flex; 
-    flex-direction: column;
-    padding-bottom: 30px;
+    flex-direction: column;          
+}
+
+.head--background{
+    background: $topBGpattern;
     border-radius: 0 0 30px 30px;
+    padding-bottom: 40px;      
 }
 
 .head__switch{
@@ -74,3 +89,105 @@ body{
     }
 }
 
+//Estilos del Social Media Box
+
+main{
+    margin-top: -40px;
+}
+
+.smbox{
+    width: 100%;        
+    display: flex; 
+    flex-direction: column;
+    align-items: center; 
+    justify-content: space-between;
+    border-radius: 4px 4px 8px 8px;
+    margin-bottom: 30px;
+    background: $cardlightBG;        
+}
+
+.smbox--follow-facebook{    
+    border-top: solid 4px $facebook-color;
+}
+
+.smbox--follow-twitter{    
+    border-top: solid 4px $twitter-color;
+}
+
+.smbox--follow-instagram{    
+    border-top: solid 4px transparent;
+    position: relative;        
+    &::before{
+        content: "";             
+        width: 100%;
+        height: 4px; 
+        position: absolute;        
+        top: -4px;
+        left: 0;
+        background: $instagram-color;
+        border-radius: 10px 10px 0 0;
+    }
+}
+
+.smbox--follow-youtube{    
+    border-top: solid 4px $youtube-color;
+}
+
+.smbox__socialmedia{
+    display: flex;
+    align-items: center; 
+    margin: 30px 0;
+}
+
+.icon{
+    width: 20px;
+}
+
+.smbox__socialmedia--user{
+    font-size: 13px;
+    color: $textlabellight;        
+    margin-left: 10px;
+}
+
+.smbox__followers{
+    text-align: center;    
+}
+
+.metrics{
+    font-size: 25px;
+    margin: 0;
+}
+
+.metrics-primary{
+    font-size: 50px;    
+}
+
+.smbox__followers--parrf{
+    font-weight: 400;
+    color: $textlabellight;
+    letter-spacing: 5px;
+    margin: 5px 0 10px 0;
+}
+
+.smbox__state{
+    display: flex; 
+    align-items: center;
+    margin: 15px 0 30px 0;
+}
+
+.smbox__state-sign{
+    width: 10px;
+}
+
+.smbox__state--metrics{
+    font-size: 14px;
+    padding: 0 5px;
+}
+
+.smbox__state--metrics-up{
+    color: $state-green;
+}
+
+.smbox__state--metrics-down{
+    color: $state-red;
+}
