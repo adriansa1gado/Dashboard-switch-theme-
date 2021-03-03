@@ -1,10 +1,14 @@
 // Variables Light Theme
 $white: hsl(0, 0%, 100%);
-$topBGpattern: hsl(225, 100%, 98%);
+$topBGpattern: hsl(230, 100%, 99%);
 $cardlightBG: hsl(227, 47%, 96%);
+$cardlighthover: hsl(229, 22%, 90%);
 $textlabellight: hsl(228, 12%, 44%);
 $textlight: hsl(230, 17%, 14%);
 $togglelight: hsl(230, 22%, 74%);
+
+//toggle Linear Gradiente
+$togglebutton: linear-gradient(to left, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
 
 // Variables de Metricts State
 $state-green: hsl(163, 72%, 41%);
@@ -38,6 +42,11 @@ h1, h2, h4, p, span{
 
 .title-primary{
     margin: 35px 0 0 0;
+}
+
+.title-secundary{
+    color: $textlabellight;
+    margin-bottom:30px;
 }
 
 .label{
@@ -103,7 +112,19 @@ main{
     justify-content: space-between;
     border-radius: 4px 4px 8px 8px;
     margin-bottom: 30px;
-    background: $cardlightBG;        
+    background: $cardlightBG;    
+    cursor: pointer;
+    transition: background 0.3s;
+    &:hover{
+        background: $cardlighthover;        
+    }    
+}
+
+.smbox--visits{
+    display: flex; 
+    flex-direction: row;
+    align-items: flex-start;   
+    padding: 20px 35px;     
 }
 
 .smbox--follow-facebook{    
@@ -140,7 +161,7 @@ main{
 }
 
 .icon{
-    width: 20px;
+    width: 25px;
 }
 
 .smbox__socialmedia--user{
@@ -154,7 +175,7 @@ main{
 }
 
 .metrics{
-    font-size: 25px;
+    font-size: 35px;
     margin: 0;
 }
 
@@ -167,6 +188,8 @@ main{
     color: $textlabellight;
     letter-spacing: 5px;
     margin: 5px 0 10px 0;
+    text-transform: uppercase;
+    text-align: center;
 }
 
 .smbox__state{
@@ -181,7 +204,7 @@ main{
 
 .smbox__state--metrics{
     font-size: 14px;
-    padding: 0 5px;
+    padding: 0 0 0 5px;
 }
 
 .smbox__state--metrics-up{
@@ -190,4 +213,77 @@ main{
 
 .smbox__state--metrics-down{
     color: $state-red;
+}
+
+.smbox__views, .smbox__status{
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between;
+    min-height: 80px;        
+}
+
+.smbox__status{
+    align-items: flex-end;    
+    padding-bottom: 5px;
+}
+
+.init{
+    margin: 0;
+    padding: 0;
+}
+
+@media screen and (min-width: 800px){
+    //estilos de encabezados
+    .title-primary{
+        font-size: 28px;
+    }    
+
+    .metrics-primary{
+        font-size: 60px;
+    }
+
+    //estilos estructurales
+
+    .head{
+        flex-direction: row;
+        align-items: center; 
+        justify-content: space-between;
+    }
+
+    .head--background{        
+        border-radius: 0 0 20px 20px;
+        padding-bottom: 60px;      
+    }    
+
+    .head__switch{
+        border: none;
+        padding: 0;      
+        display: flex; 
+        align-items: center;             
+        span{
+            margin: 0;
+            padding-right: 20px;
+        }
+    }
+
+    .head__switch--button{
+        background: $togglebutton;      
+    }
+
+    .smcontainer{
+        display: flex; 
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .smbox   {
+        width: 48.5%;
+    }
+
+}
+
+@media screen and (min-width: 1440px){
+    .smbox   {
+        width: 23%;
+    }
 }
