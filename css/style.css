@@ -1,5 +1,6 @@
 body {
   background: white;
+  transition: background 0.2s;
 }
 
 .container {
@@ -9,6 +10,7 @@ body {
 
 h1, h2, h4, p, span {
   color: #1e202a;
+  transition: color 0.5s;
 }
 
 .title {
@@ -31,6 +33,11 @@ h1, h2, h4, p, span {
   margin: 5px 0 25px 0;
 }
 
+.label-color {
+  color: #63687e;
+  transition: color 0.5s;
+}
+
 .head {
   display: flex;
   flex-direction: column;
@@ -40,6 +47,7 @@ h1, h2, h4, p, span {
   background: #fafbff;
   border-radius: 0 0 30px 30px;
   padding-bottom: 40px;
+  transition: background 0.5s;
 }
 
 .head__switch {
@@ -64,6 +72,7 @@ h1, h2, h4, p, span {
   position: absolute;
   top: 0;
   left: 0;
+  right: unset;
   width: 25px;
   height: 25px;
   background: white;
@@ -85,7 +94,7 @@ main {
   margin-bottom: 30px;
   background: #f0f2fa;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: background 0.5s;
 }
 .smbox:hover {
   background: #e0e2eb;
@@ -201,6 +210,31 @@ main {
 .init {
   margin: 0;
   padding: 0;
+}
+
+.switch-dark::after {
+  left: unset;
+  right: 0;
+  box-shadow: 2px 0 10px -2px #aeb3cb;
+}
+
+.active {
+  background: #1e202a;
+}
+.active h1, .active h2, .active h4, .active p, .active span {
+  color: white;
+}
+.active .head--background {
+  background: #1e202a;
+}
+.active .smbox {
+  background: #252a41;
+}
+.active .smbox:hover {
+  background: #373d58;
+}
+.active .label-color {
+  color: #8b97c6;
 }
 
 @media screen and (min-width: 800px) {

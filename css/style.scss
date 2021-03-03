@@ -7,6 +7,14 @@ $textlabellight: hsl(228, 12%, 44%);
 $textlight: hsl(230, 17%, 14%);
 $togglelight: hsl(230, 22%, 74%);
 
+// Variables Light Theme
+$dark: hsl(230, 17%, 14%);
+$topBGpatternDark: hsl(230, 17%, 14%);
+$carddarkBG: hsl(228, 28%, 20%);
+$carddarkhover: hsl(229, 23%, 28%);
+$textlabeldark: hsl(228, 34%, 66%);
+$textdark: hsl(0, 0%, 100%);
+
 //toggle Linear Gradiente
 $togglebutton: linear-gradient(to left, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
 
@@ -23,6 +31,7 @@ $youtube-color: hsl(348, 97%, 39%);
 //Estilos del fondo
 body{
     background: $white;
+    transition: background 0.2s;
 }
 
 .container{
@@ -34,6 +43,7 @@ body{
 
 h1, h2, h4, p, span{
     color: $textlight;        
+    transition: color 0.5s;
 }
 
 .title{
@@ -56,17 +66,23 @@ h1, h2, h4, p, span{
     margin: 5px 0 25px 0;     
 }
 
+.label-color{
+    color: $textlabellight;    
+    transition: color 0.5s;
+}
+
 // Estilos del Header
 
 .head{    
     display: flex; 
-    flex-direction: column;          
+    flex-direction: column;           
 }
 
 .head--background{
     background: $topBGpattern;
     border-radius: 0 0 30px 30px;
     padding-bottom: 40px;      
+    transition: background .5s;   
 }
 
 .head__switch{
@@ -90,11 +106,12 @@ h1, h2, h4, p, span{
         position: absolute;
         top: 0;         
         left: 0;
+        right: unset;
         width: 25px;
         height: 25px;
         background: $white;
         border-radius: 20px;
-        box-shadow: -2px 0 10px -2px $togglelight;
+        box-shadow: -2px 0 10px -2px $togglelight;        
     }
 }
 
@@ -114,7 +131,7 @@ main{
     margin-bottom: 30px;
     background: $cardlightBG;    
     cursor: pointer;
-    transition: background 0.3s;
+    transition: background 0.5s;
     &:hover{
         background: $cardlighthover;        
     }    
@@ -144,9 +161,9 @@ main{
         height: 4px; 
         position: absolute;        
         top: -4px;
-        left: 0;
+        left: 0;        
         background: $instagram-color;
-        border-radius: 10px 10px 0 0;
+        border-radius: 10px 10px 0 0;        
     }
 }
 
@@ -231,6 +248,42 @@ main{
     margin: 0;
     padding: 0;
 }
+
+//
+// Estilos para el tema oscuro del dashboard
+//
+
+.switch-dark{
+    &::after{
+        left: unset; 
+        right: 0;
+        box-shadow: 2px 0 10px -2px $togglelight;
+    }
+}
+
+.active{
+    background: $dark;
+    h1, h2, h4, p, span{
+        color: $textdark;        
+    }
+
+    .head--background{
+        background: $topBGpatternDark
+    }
+
+    .smbox{
+        background: $carddarkBG;
+        &:hover{
+            background: $carddarkhover;
+        }
+    }
+
+    .label-color{
+        color: $textlabeldark;
+    }
+}
+
+//Final de los estilos theme
 
 @media screen and (min-width: 800px){
     //estilos de encabezados
