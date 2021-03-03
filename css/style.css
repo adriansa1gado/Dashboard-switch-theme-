@@ -65,6 +65,7 @@ h1, h2, h4, p, span {
   border: none;
   border-radius: 20px;
   cursor: pointer;
+  outline: none;
   background: #aeb3cb;
 }
 .head__switch--button::after {
