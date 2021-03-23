@@ -7,7 +7,7 @@ $textlabellight: hsl(228, 12%, 44%);
 $textlight: hsl(230, 17%, 14%);
 $togglelight: hsl(230, 22%, 74%);
 
-// Variables Light Theme
+// Variables Night Theme
 $dark: hsl(230, 17%, 14%);
 $topBGpatternDark: hsl(230, 17%, 14%);
 $carddarkBG: hsl(228, 28%, 20%);
@@ -36,6 +36,7 @@ body{
 
 .container{
     width: 85%;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -175,7 +176,7 @@ main{
 .smbox__socialmedia{
     display: flex;
     align-items: center; 
-    margin: 30px 0;
+    margin: 30px 0 10px 0;
 }
 
 .icon{
@@ -198,14 +199,14 @@ main{
 }
 
 .metrics-primary{
-    font-size: 50px;    
+    font-size: 45px;    
 }
 
 .smbox__followers--parrf{
     font-weight: 400;
     color: $textlabellight;
     letter-spacing: 5px;
-    margin: 5px 0 10px 0;
+    margin: 0 0 10px 0;
     text-transform: uppercase;
     text-align: center;
 }
@@ -226,11 +227,11 @@ main{
 }
 
 .smbox__state--metrics-up{
-    color: $state-green;
+    color: $state-green !important;
 }
 
 .smbox__state--metrics-down{
-    color: $state-red;
+    color: $state-red !important;
 }
 
 .smbox__views, .smbox__status{
